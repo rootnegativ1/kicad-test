@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "alarm_panel_v1.1c")(type "KiCad")(uri "${KIPRJMOD}/alarm_panel_v1.1c.pretty")(options "")(descr ""))
+)
