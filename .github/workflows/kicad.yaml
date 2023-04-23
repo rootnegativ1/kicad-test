@@ -35,8 +35,12 @@ jobs:
         schema: v1.2/${{ env.BaseFileName }}.kicad_sch
         board: v1.2/${{ env.BaseFileName }}.kicad_pcb
 
-    - name: Download results to current working directory
-      uses: actions/download-artifact@v3
+    - name: Upload results
+      uses: actions/upload-artifact@v3
+      with:
+        name: v1.2/output/*
+        path: v1.2/*
+        if-no-files-found: warn
   
-    - name: Display structure of downloaded files
-      run: ls -R
+    #- name: Display structure of downloaded files
+      #run: ls -R
