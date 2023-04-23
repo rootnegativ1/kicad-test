@@ -9,11 +9,13 @@ on:
     paths:
       - '*.kicad_sch'
       - '*.kicad_pcb'
+      - '*.kibot.yaml'
       - '.github/workflows/kicad.yml'
   pull_request:
     paths:
       - '*.kicad_sch'
       - '*.kicad_pcb'
+      - '*.kibot.yaml'
       - '.github/workflows/kicad.yml'
   workflow_dispatch:
 
@@ -29,7 +31,7 @@ jobs:
       with:
         config: config.kibot.yaml
         dir: output
-        schema: '*.kicad_sch'
+        schema: 'alarm_panel_v1.1c.kicad_sch'
         board: '*.kicad_pcb'
 
     - name: Push Changes
