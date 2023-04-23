@@ -24,46 +24,14 @@ jobs:
     - name: Get Repo
       uses: actions/checkout@v3
 
-    - name: Write Config
-      run: |
-        echo "kibot:" > config.kibot.yml
-        echo "  version: 1" >> config.kibot.yml
-        echo "global:" >> config.kibot.yml
-        echo "  output: '%i.%x'" >> config.kibot.yml
-        echo "outputs:" >> config.kibot.yml
-        echo "- type: 'pcbdraw'" >> config.kibot.yml
-        echo "  name: 'pcb-front'" >> config.kibot.yml
-        echo "- type: 'pcbdraw'" >> config.kibot.yml
-        echo "  name: 'pcb-back'" >> config.kibot.yml
-        echo "  options:" >> config.kibot.yml
-        echo "    bottom: true" >> config.kibot.yml
-        echo "- type: 'pcb_print'" >> config.kibot.yml
-        echo "  name: 'pcb-png'" >> config.kibot.yml
-        echo "  options:" >> config.kibot.yml
-        echo "    format: 'PNG'" >> config.kibot.yml
-        echo "- type: 'render_3d'" >> config.kibot.yml
-        echo "  name: 'board-3d-render'" >> config.kibot.yml
-        echo "  options:" >> config.kibot.yml
-        echo "    auto_crop: true" >> config.kibot.yml
-        echo "    transparent_background: true" >> config.kibot.yml
-        echo "- type: 'step'" >> config.kibot.yml
-        echo "  name: 'board-step'" >> config.kibot.yml
-        echo "- type: 'pdf_sch_print'" >> config.kibot.yml
-        echo "  name: 'schematic'" >> config.kibot.yml
-        echo "- type: 'bom'" >> config.kibot.yml
-        echo "  name: 'bom'" >> config.kibot.yml
-        echo "  options:" >> config.kibot.yml
-        echo "    csv:" >> config.kibot.yml
-        echo "      hide_pcb_info: true" >> config.kibot.yml
-        echo "      hide_stats_info: true" >> config.kibot.yml
-
     - name: Run KiBot
-      uses: INTI-CMNB/KiBot@v2_k7
+      uses: INTI-CMNB/KiBot@v2_k6
       with:
         config: config.kibot.yml
         dir: output
         schema: '*.kicad_sch'
         board: '*.kicad_pcb'
+
     - name: Push Changes
       run: |
         git config --global user.name "$PUSH_NAME"
