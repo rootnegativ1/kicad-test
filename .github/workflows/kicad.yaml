@@ -45,6 +45,8 @@ jobs:
           output/*.pdf
           output/*.step
           output/*.png
+          output/*.svg
+          output/*.csv
 
     - uses: actions/download-artifact@v3
       id: download
