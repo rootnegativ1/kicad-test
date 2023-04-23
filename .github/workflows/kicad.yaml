@@ -31,8 +31,8 @@ jobs:
         schema: 'alarm_panel_v1.1c.kicad_sch'
         board: 'alarm_panel_v1.1c.kicad_pcb'
 
-    - name: upload results
-      uses: actions/upload-artifact@v3
-      with:
-        name: output
-        path: output
+    - name: Download results to current working directory
+      uses: actions/download-artifact@v3
+  
+    - name: Display structure of downloaded files
+      run: ls -R
