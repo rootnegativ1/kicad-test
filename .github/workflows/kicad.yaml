@@ -1,6 +1,6 @@
 name: kicad
 env:
-  PUSH_NAME: 'test user'
+  PUSH_NAME: 'John Stenger'
   PUSH_USER: 'rootnegativ1'
   PUSH_MESSAGE: 'Kicad Action'
 on:
@@ -62,7 +62,7 @@ jobs:
       with:
         config: config.kibot.yml
         dir: output
-        schema: '*.sch'
+        schema: '*.kicad_sch'
         board: '*.kicad_pcb'
     - name: Push Changes
       run: |
