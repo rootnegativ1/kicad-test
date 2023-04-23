@@ -49,7 +49,7 @@ jobs:
         echo "    csv:" >> config.kibot.yml
         echo "      hide_pcb_info: true" >> config.kibot.yml
         echo "      hide_stats_info: true" >> config.kibot.yml
-    - uses: INTI-CMNB/KiBot@v1
+    - uses: INTI-CMNB/KiBot@v2_k7
       with:
         config: config.kibot.yml
         dir: output
