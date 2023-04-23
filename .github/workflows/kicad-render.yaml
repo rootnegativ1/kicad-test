@@ -42,6 +42,8 @@ jobs:
         echo "  options:" >> config.kibot.yml
         echo "    auto_crop: true" >> config.kibot.yml
         echo "    transparent_background: true" >> config.kibot.yml
+        echo "- type: 'step'" >> config.kibot.yml
+        echo "  name: 'board-step'" >> config.kibot.yml
         echo "- type: 'pdf_sch_print'" >> config.kibot.yml
         echo "  name: 'schematic'" >> config.kibot.yml
         echo "- type: 'bom'" >> config.kibot.yml
