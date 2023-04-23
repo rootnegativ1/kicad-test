@@ -28,8 +28,8 @@ jobs:
       with:
         config: config.kibot.yaml
         dir: output
-        schema: '*.kicad_sch'
-        board: '*.kicad_pcb'
+        schema: 'v1.2/*.kicad_sch'
+        board: 'v1.2/*.kicad_pcb'
 
     - name: Download results to current working directory
       uses: actions/download-artifact@v3
