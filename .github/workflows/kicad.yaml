@@ -39,9 +39,13 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: output
-        path: output/*
-        if-no-files-found: warn
-  
+        #path: output/*
+        path: |
+          output/*.zip
+          output/*.pdf
+          output/*.step
+          output/*.png
+
     - uses: actions/download-artifact@v3
       id: download
       with:
