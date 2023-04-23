@@ -7,13 +7,13 @@ on:
       - '*.kicad_sch'
       - '*.kicad_pcb'
       - '*.kibot.yaml'
-      - '.github/workflows/kicad.yml'
+      - '.github/workflows/kicad.yaml'
   pull_request:
     paths:
       - '*.kicad_sch'
       - '*.kicad_pcb'
       - '*.kibot.yaml'
-      - '.github/workflows/kicad.yml'
+      - '.github/workflows/kicad.yaml'
   workflow_dispatch:
 
 jobs:
