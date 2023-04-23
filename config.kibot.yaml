@@ -3,31 +3,32 @@ kibot:
 
 global:
   # We want the revision added to the names for this project
-  output: '%f-%i_%r.%x'
+  # <filename>_<version>-<item>.<extension>
+  output: '%f_%r-%i.%x'
 
 outputs:
   - type: pcbdraw
-    name: pcb-front
+    # name: pcb-front
 
   - type: pcbdraw
-    name: pcb-back
+    # name: pcb-back
     options:
       bottom: true
 
   - type: render_3d
-    name: board-3d-render
+    # name: board-3d-render
     options:
       auto_crop: true
       transparent_background: true
 
   - type: step
-    name: board-step
+    # name: board-step
 
   - type: pdf_sch_print
-    name: schematic
+    # name: schematic
 
   - type: bom
-    name: bom
+    # name: bom
     options:
       csv:
         hide_pcb_info: true
