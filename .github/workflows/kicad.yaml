@@ -1,24 +1,24 @@
 name: kicad
 
-env:
-  #BaseFileName: ${{ github.event.repository.name }}
-  BaseFileName: 'alarm_panel'
-
 on:
   push:
     branches: main
     paths:
-      - v1.2/${{ env.BaseFileName }}.kicad_sch
-      - v1.2/${{ env.BaseFileName }}.kicad_pcb
+      - 'v1.2/*.kicad_sch'
+      - 'v1.2/*.kicad_pcb'
       - '*.kibot.yaml'
       - '.github/workflows/kicad.yaml'
   pull_request:
     paths:
-      - v1.2/${{ env.BaseFileName }}.kicad_sch
-      - v1.2/${{ env.BaseFileName }}.kicad_pcb
+      - 'v1.2/*.kicad_sch'
+      - 'v1.2/*.kicad_pcb'
       - '*.kibot.yaml'
       - '.github/workflows/kicad.yaml'
   workflow_dispatch:
+
+env:
+  #BaseFileName: ${{ github.event.repository.name }}
+  BaseFileName: 'alarm_panel'
 
 jobs:
   kicad:
