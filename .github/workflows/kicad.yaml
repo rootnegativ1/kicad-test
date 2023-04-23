@@ -9,12 +9,12 @@ on:
     paths:
       - '*.kicad_sch'
       - '*.kicad_pcb'
-      - '.github/workflows/kibot_action_quick_start.yml'
+      - '.github/workflows/kicad.yml'
   pull_request:
     paths:
       - '*.kicad_sch'
       - '*.kicad_pcb'
-      - '.github/workflows/kibot_action_quick_start.yml'
+      - '.github/workflows/kicad.yml'
   workflow_dispatch:
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
     - name: Run KiBot
       uses: INTI-CMNB/KiBot@v2_k6
       with:
-        config: config.kibot.yml
+        config: config.kibot.yaml
         dir: output
         schema: '*.kicad_sch'
         board: '*.kicad_pcb'
