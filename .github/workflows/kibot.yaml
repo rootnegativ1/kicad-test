@@ -40,7 +40,8 @@ jobs:
         echo "- type: 'render_3d'" >> config.kibot.yml
         echo "  name: 'board-3d-render'" >> config.kibot.yml
         echo "  options:" >> config.kibot.yml
-        echo "    zoom: 4" >> config.kibot.yml
+        echo "    auto_crop: true" >> config.kibot.yml
+        echo "    transparent_background: true" >> config.kibot.yml
         echo "- type: 'pdf_sch_print'" >> config.kibot.yml
         echo "  name: 'schematic'" >> config.kibot.yml
         echo "- type: 'bom'" >> config.kibot.yml
