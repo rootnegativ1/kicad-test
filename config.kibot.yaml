@@ -1,0 +1,38 @@
+kibot:
+  version: 1
+
+global:
+  output: '%i.%x'
+
+outputs:
+  - type: pcbdraw
+    name: pcb-front
+
+  - type: pcbdraw
+    name: pcb-back
+    options:
+      bottom: true
+
+  - type: pcb_print
+    name: pcb-png
+    options:
+      format: 'PNG'
+
+  - type: render_3d
+    name: board-3d-render
+    options:
+      auto_crop: true
+      transparent_background: true
+
+  - type: step
+    name: board-step
+
+  - type: pdf_sch_print
+    name: schematic
+
+  - type: bom
+    name: bom
+    options:
+      csv:
+        hide_pcb_info: true
+        hide_stats_info: true
