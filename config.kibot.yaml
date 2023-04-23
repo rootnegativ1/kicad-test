@@ -13,11 +13,6 @@ outputs:
     options:
       bottom: true
 
-  - type: pcb_print
-    name: pcb-png
-    options:
-      format: 'PNG'
-
   - type: render_3d
     name: board-3d-render
     options:
