@@ -1,8 +1,5 @@
 name: kicad
-env:
-  PUSH_NAME: 'John Stenger'
-  PUSH_USER: 'rootnegativ1'
-  PUSH_MESSAGE: 'Kicad Action'
+
 on:
   push:
     branches: main
@@ -23,7 +20,7 @@ jobs:
   kicad:
     runs-on: ubuntu-latest
     steps:
-    - name: Get Repo
+    - name: Get repo
       uses: actions/checkout@v3
 
     - name: Run KiBot
@@ -34,10 +31,8 @@ jobs:
         schema: 'alarm_panel_v1.1c.kicad_sch'
         board: 'alarm_panel_v1.1c.kicad_pcb'
 
-    - name: Push Changes
-      run: |
-        git config --global user.name "$PUSH_NAME"
-        git config --global user.email "$PUSH_USER@users.noreply.github.com"
-        git add output/*
-        git commit -m "$PUSH_MESSAGE"
-        git push
+    - name: upload results
+      uses: actions/upload-artifact@v3
+      with:
+        name: output
+        path: output
