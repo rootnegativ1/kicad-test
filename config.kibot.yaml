@@ -2,7 +2,8 @@ kibot:
   version: 1
 
 global:
-  output: '%i.%x'
+  # We want the revision added to the names for this project
+  output: '%f-%i_%r.%x'
 
 outputs:
   - type: pcbdraw
