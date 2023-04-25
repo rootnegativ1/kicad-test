@@ -19,8 +19,8 @@ on:
 env:
   #BaseFileName: ${{ github.event.repository.name }}
   BaseFileName: 'alarm_panel'
-  PUSH_NAME: 'John Stenger'
-  PUSH_USER: 'rootnegativ1'
+  #PUSH_NAME: 'John Stenger'
+  #PUSH_USER: 'rootnegativ1'
   PUSH_MESSAGE: 'Kicad Action'
 
 jobs:
@@ -38,30 +38,28 @@ jobs:
         schema: v1.2/${{ env.BaseFileName }}.kicad_sch
         board: v1.2/${{ env.BaseFileName }}.kicad_pcb
 
-    - name: Upload results
-      uses: actions/upload-artifact@v3
-      with:
-        name: output
-        #path: output/*
-        path: |
-          output/*.zip
-          output/*.pdf
-          output/*.step
-          output/*.png
-          output/*.svg
-          output/*.csv
+    # - name: Upload results
+      # uses: actions/upload-artifact@v3
+      # with:
+        # name: output
+        # path: |
+          # output/*.zip
+          # output/*.pdf
+          # output/*.step
+          # output/*.png
+          # output/*.svg
+          # output/*.csv
 
-    - uses: actions/download-artifact@v3
-      id: download
-      with:
-        name: output
-        # path: output/*
+    # - uses: actions/download-artifact@v3
+      # id: download
+      # with:
+        # name: output
 
-    - name: 'Echo download path'
-      run: echo ${{steps.download.outputs.download-path}}
+    # - name: 'Echo download path'
+      # run: echo ${{steps.download.outputs.download-path}}
   
-    - name: Display structure of downloaded files
-      run: ls -R
+    # - name: Display structure of downloaded files
+      # run: ls -R
 
     # - name: Push files
       # run: |
