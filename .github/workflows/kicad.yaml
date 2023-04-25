@@ -77,7 +77,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "github-actions"
         git add output/*
-        git commit -m "$PUSH_MESSAGE" -a
+        git commit -m "$PUSH_MESSAGE"
 
     - name: Push changes
       uses: ad-m/github-push-action@master
