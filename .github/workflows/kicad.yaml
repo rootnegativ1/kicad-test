@@ -4,14 +4,14 @@ on:
   push:
     branches: main
     paths:
-      - 'main-board/**/*.kicad_sch'
-      - 'main-board/**/*.kicad_pcb'
+      - '**/*.kicad_sch'
+      - '**/*.kicad_pcb'
       - '*.kibot.yaml'
       # - '.github/workflows/kicad.yaml'
   pull_request:
     paths:
-      - 'main-board/**/*.kicad_sch'
-      - 'main-board/**/*.kicad_pcb'
+      - '**/*.kicad_sch'
+      - '**/*.kicad_pcb'
       - '*.kibot.yaml'
       # - '.github/workflows/kicad.yaml'
   workflow_dispatch:
