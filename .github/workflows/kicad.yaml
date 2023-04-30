@@ -4,23 +4,21 @@ on:
   push:
     branches: main
     paths:
-      - 'v1.2/*.kicad_sch'
-      - 'v1.2/*.kicad_pcb'
+      - 'main-board/**/*.kicad_sch'
+      - 'main-board/**/*.kicad_pcb'
       - '*.kibot.yaml'
-      - '.github/workflows/kicad.yaml'
+      # - '.github/workflows/kicad.yaml'
   pull_request:
     paths:
-      - 'v1.2/*.kicad_sch'
-      - 'v1.2/*.kicad_pcb'
+      - 'main-board/**/*.kicad_sch'
+      - 'main-board/**/*.kicad_pcb'
       - '*.kibot.yaml'
-      - '.github/workflows/kicad.yaml'
+      # - '.github/workflows/kicad.yaml'
   workflow_dispatch:
 
 env:
   #BaseFileName: ${{ github.event.repository.name }}
   BaseFileName: 'alarm_panel'
-  #PUSH_NAME: 'John Stenger'
-  #PUSH_USER: 'rootnegativ1'
   PUSH_MESSAGE: 'Kicad Action'
 
 jobs:
